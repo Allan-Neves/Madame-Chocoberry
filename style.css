@@ -221,7 +221,7 @@ main {
 .card {
     background-color: #fff;
     width: 100%;
-    max-width: 320px;
+    max-width: 340px;
     margin: 20px 12px 30px 12px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.226);
@@ -277,21 +277,118 @@ main {
 }
 
 
-.section2-button {
-    padding: 8px 12px;
-    border-radius: 7px;
-    color: white;
-    font-size: 15px;
+.button {
+    --width: 100px;
+    --height: 35px;
+    --tooltip-height: 35px;
+    --tooltip-width: 90px;
+    --gap-between-tooltip-to-button: 18px;
+    --button-color: #DDBA88;
+    --tooltip-color: #fff;
+    width: var(--width);
+    height: var(--height);
+    background: var(--button-color);
+    position: relative;
+    text-align: center;
     font-weight: 600;
-    background-color: #DDBA88;
-    border: none;
+    border-radius: 0.45em;
+    transition: background-color 0.4s;
+  }
+  
+  .button::before {
+    position: absolute;
+    content: attr(data-tooltip);
+    width: var(--tooltip-width);
+    height: var(--tooltip-height);
+    background-color: #6e3112;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #DDBA88;
+    border-radius: .25em;
+    line-height: var(--tooltip-height);
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+    left: calc(50% - var(--tooltip-width) / 2);
+  }
+  
+  .button::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #6e3112;
+    left: calc(50% - 10px);
+    bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+  }
+  
+  .button::after,.button::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+  }
+  
+  .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button-wrapper,.text,.icon {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+  }
+  
+  .text {
+    top: 0
+  }
+  
+  .text,.icon {
+    transition: top 0.5s;
+  }
+  
+  .icon {
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .button:hover {
+    background-color: #6e3112;
     cursor: pointer;
-    transition: all 0.4s;
-}
+  }
+  
+  .button:hover .text {
+    top: -100%;
+  }
+  
+  .button:hover .icon {
+    top: 0;
+  }
+  
+  .button:hover:before,.button:hover:after {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .button:hover:after {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+  }
+  
+  .button:hover:before {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+  }
 
-.section2-button:hover {
-    background-color: #c7a679;
-}
 
 /* ESTILOS SECTION 5 */
 #contato {
@@ -395,7 +492,7 @@ main {
 
     .nav-list {
         position: absolute;
-        top: 10vh;
+        top: 9.7vh;
         right: 0;
         z-index: 1000;
         width: 50vw;
