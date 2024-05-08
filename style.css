@@ -215,6 +215,7 @@ main {
 .section-cards-info {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
 }
@@ -571,6 +572,10 @@ main {
 }
 
 @media (max-width: 1092px) {
+    .section-cards-info {
+        justify-content: center;
+    }
+
     .section-2 {
         justify-content: center;
     }
