@@ -151,6 +151,7 @@ main {
 
 /* ESTILO DA SECTION 1 */
 .section-1 {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -201,11 +202,60 @@ main {
 
 /* ESTILOS DO TEXTO INFORMATIVO */
 #info-text {
-    margin: 35px 12px;
+    color: rgb(78, 78, 78);;
+    margin: 35px 12px 60px 12px;
     text-align: center;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.226);
     border-radius: 10px;
+}
+
+
+/* ESTILO DA SECTION INFO */
+.section-cards-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-info-content{
+    width: 300px;
+    margin: 0 15px 15px 15px;
+    transition: all 0.4s;
+}
+
+.card-info-content:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.card-info {
+    width: 100%;
+    height: 153px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.226);
+    transition: all 0.4s;
+}
+
+.card-info img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.card-info-content h3 {
+    text-align: left;
+    margin: 20px 0 15px 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #6e3112;
+}
+
+.card-info-content p {
+    color: rgb(78, 78, 78);
+    text-align: left;
+    margin: 7px 0 20px 0;
 }
 
 
@@ -240,6 +290,7 @@ main {
 }
 
 .card-description p {
+    color: #6e3112;
     font-weight: 600;
     font-size: 17px;
     margin: 15px 14px 20px 20px;
@@ -247,11 +298,12 @@ main {
 }
 
 .card-description .especificacoes {
-    color: gray;
+    color: #DDBA88;
     font-size: 14px;
 }
 
 .card-produto-espec {
+    color: rgb(78, 78, 78);;
     margin: 0 20px 20px 20px;
     text-align: justify;
 }
@@ -265,6 +317,7 @@ main {
 }
 
 .section2-preco {
+    color: #6e3112;
     display: inline;
     font-size: 20px;
     font-weight: 600;
@@ -272,7 +325,7 @@ main {
 
 .section2-subTitulo {
     display: inline;
-    color: gray;
+    color: rgb(78, 78, 78);
     font-size: 14px;
 }
 
@@ -390,7 +443,7 @@ main {
   }
 
 
-/* ESTILOS SECTION 5 */
+/* ESTILOS CONTATO */
 #contato {
     padding: 40px 0px;
     background-color: #DDBA88;
@@ -517,7 +570,7 @@ main {
     }
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1092px) {
     .section-2 {
         justify-content: center;
     }
