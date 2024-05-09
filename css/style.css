@@ -264,6 +264,10 @@ main {
     margin: 7px 0 20px 0;
 }
 
+.card-info-content p > b {
+    font-weight: 600;
+}
+
 
 /* ESTILO SECTION 2 */
 .section-2 {
