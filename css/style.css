@@ -109,6 +109,12 @@ nav {
     display: none;
 }
 
+.mySlides img {
+    width:100%;
+    height: 80vh;
+    margin-top: 83px;
+}
+
 .prev,
 .next {
     cursor: pointer;
@@ -182,7 +188,6 @@ main {
     height: 153px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.226);
-    transition: all 0.4s;
 }
 
 .card-promotion img {
@@ -524,6 +529,70 @@ main {
 }
 
 
+/* ESTILOS DO CONTEÚDO PRÍNCIPAL */
+#principal-mvv {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#principal-mvv div {
+    margin: 20px;
+}
+
+#principal-mvv img {
+    max-width: 100%;
+    margin: 100px 0px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+#mvv-section div {
+    margin: 50px 0;
+    padding: 25px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.226);
+}
+
+#mvv-section h1 {
+    color: #4b1d06;
+    font-size: 35px;
+}
+
+#mvv-section h3 {
+    color: #6e3112;
+    font-size: 27px;
+    margin: 0  0 10px 0;
+}
+
+#mvv-section p {
+    color: rgb(75, 75, 75);
+    word-spacing: 5px;
+    line-height: 20px;
+}
+
+#mvv-section ul {
+    margin-left: 30px;
+}
+
+#mvv-section ul li {
+    list-style: decimal;
+    color: rgb(75, 75, 75);
+    margin-bottom: 20px;
+    word-spacing: 5px;
+    line-height: 20px;
+}
+
+.text-info {
+    margin: 10px 0 50px 0;
+}
+
+
+
+
 /* CSS ANIMATIONS */
 @keyframes navLinkFade {
     from {
@@ -590,6 +659,9 @@ main {
 }
 
 @media (max-width: 610px) {
+    .mySlides img {
+        height: 65vh;
+    }
 
     .card {
         max-width: 80%;
