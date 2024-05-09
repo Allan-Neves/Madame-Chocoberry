@@ -45,13 +45,13 @@ class MobileNavbar {
   mobileNavbar.init();
   
   // ============ Configuração da navegação suave ============ \\
-  // var links = document.querySelectorAll("#menu a");
+  var links = document.querySelectorAll("#menu .link");
   
-  // links.forEach(function (link) {
-  //   link.addEventListener("click", function (event) {
-  //     event.preventDefault();
-  //     var section = document.querySelector(link.getAttribute("href"));
-  //     if (section) { 
-  //       section.scrollIntoView({ behavior: "smooth" });
-  //     }    });
-  // });
+  links.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      var section = document.querySelector(link.getAttribute("href"));
+      if (section) { 
+        section.scrollIntoView({ behavior: "smooth" });
+      }    });
+  });

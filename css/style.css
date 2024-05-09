@@ -1,3 +1,36 @@
+/* DEFININDO AS FONTES DO PROJETO */
+@font-face {
+    font-family: 'Nikumaru';
+    src: url('fonts/Calibri.eot');
+    src: url('../fonts/NikumaruFont/07‚É‚­‚Ü‚éƒtƒHƒ“ƒg.otf') format('opentype'),
+         url('../fonts/NikumaruFont/‚»‚Ì‘¼ƒtƒ@ƒCƒ‹iƒTƒ_[ƒgŠOj/07‚É‚­‚Ü‚éƒtƒHƒ“ƒg.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('fonts/Calibri.eot');
+    src: url('../fonts/Kanit/Kanit-Light.ttf') format('truetype'),
+         url('../fonts/Kanit/Kanit-Medium.ttf') format('truetype'),
+         url('../fonts/Kanit/Kanit-Regular.ttf') format('truetype'),
+         url('../fonts/Kanit/Kanit-SemiBold.ttf') format('truetype'),
+}
+
+
+/* DEFININDO AS VARIAVEIS GLOBAIS */
+:root {
+    --cor-principal-1: #6e3112;
+    --cor-principal-2: #DDBA88;
+
+    --cor-sombras-1: rgba(0, 0, 0, 0.226);
+    --cor-sombras-2: rgba(0, 0, 0, 0.446);
+
+
+    --cor-textos-1: rgb(78, 78, 78);
+
+    --fonte-titulos: 'Nikumaru', sans-serif;
+    --fonte-paragrafos: 'Kanit', sans-serif;
+  }
+
 * {
     padding: 0;
     margin: 0;
@@ -5,10 +38,10 @@
 }
 
 body {
+    font-family: var(--fonte-paragrafos);
     scroll-behavior: smooth;
     overflow-x: hidden;
     position: relative;
-    font-family: 'Lato', sans-serif;
     height: 100vh;
 }
 
@@ -20,7 +53,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
     border-radius: 15px;
-    background-color: #6e3112;
+    background-color: var(--cor-principal-1);
 }
 
 
@@ -39,7 +72,7 @@ nav {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    background-color: #6e3112;
+    background-color: var(--cor-principal-1);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -56,9 +89,9 @@ nav {
 }
 
 .nav-list li a {
-    color: #e0c59f;
-    font-weight: 500;
-    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: var(--cor-principal-2);
+    font-weight: 300;
     text-decoration: none;
     transition: 0.4s;
 }
@@ -76,7 +109,7 @@ nav {
 .mobile-menu div {
     width: 32px;
     height: 2px;
-    background: #fff;
+    background-color: var(--cor-principal-2);
     margin: 8px;
     transition: 0.4s;
 }
@@ -123,7 +156,7 @@ nav {
     width: auto;
     margin-top: -22px;
     padding: 16px;
-    color: white;
+    color: #fff;
     font-weight: bold;
     font-size: 25px;
     border-radius: 0 3px 3px 0;
@@ -166,10 +199,9 @@ main {
 
 #titulo {
     text-align: center;
-    font-family: 'Kanit', sans-serif;
-    font-weight: 500;
-    font-size: 40px;
-    color: #6e3112;
+    font-family: var(--fonte-titulos);
+    font-size: 45px;
+    color: var(--cor-principal-1);
     margin: 40px 20px;
 }
 
@@ -187,7 +219,8 @@ main {
     width: 153px;
     height: 153px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.226);
+    background-color: var(--cor-principal-2);
+    box-shadow: 0 0 10px var(--cor-sombras-1);
 }
 
 .card-promotion img {
@@ -199,19 +232,21 @@ main {
 .card-promotion-content p {
     text-align: center;
     margin: 7px 0 20px 0;
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 600;
-    color: #6e3112;
+    color: var(--cor-principal-1);
 }
 
 
 /* ESTILOS DO TEXTO INFORMATIVO */
 #info-text {
-    color: rgb(78, 78, 78);;
+    color: var(--cor-textos-1);
+    font-weight: 300;
+    font-size: 17px;
     margin: 35px 12px 60px 12px;
     text-align: center;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.226);
+    box-shadow: 0 0 10px var(--cor-sombras-1);
     border-radius: 10px;
 }
 
@@ -240,7 +275,7 @@ main {
     width: 100%;
     height: 153px;
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.226);
+    box-shadow: 0 0 10px var(--cor-sombras-1);
     transition: all 0.4s;
 }
 
@@ -251,15 +286,17 @@ main {
 }
 
 .card-info-content h3 {
+    font-family: var(--fonte-titulos);
     text-align: left;
     margin: 20px 0 15px 0;
-    font-size: 20px;
-    font-weight: 500;
-    color: #6e3112;
+    font-size: 19px;
+    color: var(--cor-principal-1);
 }
 
 .card-info-content p {
-    color: rgb(78, 78, 78);
+    color: var(--cor-textos-1);
+    font-weight: 300;
+    font-size: 16px;
     text-align: left;
     margin: 7px 0 20px 0;
 }
@@ -284,12 +321,12 @@ main {
     max-width: 340px;
     margin: 20px 12px 30px 12px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.226);
+    box-shadow: 0 0 10px var(--cor-sombras-1);
     transition: all 0.6s;
 }
 
 .card:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.336);
+    box-shadow: 0 0 15px var(--cor-sombras-2);
     transform: translateY(-4px);
 }
 
@@ -299,21 +336,26 @@ main {
     border-radius: 10px 10px 0 0;
 }
 
-.card-description p {
-    color: #6e3112;
+.card-description h3 {
+    font-family: var(--fonte-titulos);
+    color: var(--cor-principal-1);
     font-weight: 600;
-    font-size: 17px;
+    font-size: 19px;
     margin: 15px 14px 20px 20px;
     display: inline-block;
 }
 
 .card-description .especificacoes {
-    color: #DDBA88;
-    font-size: 14px;
+    font-family: var(--fonte-paragrafos);
+    font-weight: 300;
+    color: var(--cor-principal-2);
+    font-size: 16px;
 }
 
 .card-produto-espec {
-    color: rgb(78, 78, 78);;
+    color: var(--cor-textos-1);
+    font-weight: 300;
+    font-size: 15px;
     margin: 0 20px 20px 20px;
     text-align: justify;
 }
@@ -327,15 +369,16 @@ main {
 }
 
 .section2-preco {
-    color: #6e3112;
+    font-family: var(--fonte-titulos);
+    color: var(--cor-principal-1);
     display: inline;
     font-size: 20px;
-    font-weight: 600;
 }
 
 .section2-subTitulo {
     display: inline;
-    color: rgb(78, 78, 78);
+    color: var(--cor-textos-1);
+    font-weight: 500;
     font-size: 14px;
 }
 
@@ -346,11 +389,10 @@ main {
     --tooltip-height: 35px;
     --tooltip-width: 90px;
     --gap-between-tooltip-to-button: 18px;
-    --button-color: #DDBA88;
     --tooltip-color: #fff;
     width: var(--width);
     height: var(--height);
-    background: var(--button-color);
+    background: var(--cor-principal-2);
     position: relative;
     text-align: center;
     font-weight: 600;
@@ -363,10 +405,10 @@ main {
     content: attr(data-tooltip);
     width: var(--tooltip-width);
     height: var(--tooltip-height);
-    background-color: #6e3112;
+    background-color: var(--cor-principal-1);
     font-size: 0.9rem;
     font-weight: 600;
-    color: #DDBA88;
+    color: var(--cor-principal-2);
     border-radius: .25em;
     line-height: var(--tooltip-height);
     bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
@@ -379,7 +421,7 @@ main {
     width: 0;
     height: 0;
     border: 10px solid transparent;
-    border-top-color: #6e3112;
+    border-top-color: var(--cor-principal-1);
     left: calc(50% - 10px);
     bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
   }
@@ -427,7 +469,7 @@ main {
   }
   
   .button:hover {
-    background-color: #6e3112;
+    background-color: var(--cor-principal-1);
     cursor: pointer;
   }
   
@@ -456,7 +498,7 @@ main {
 /* ESTILOS CONTATO */
 #contato {
     padding: 40px 0px;
-    background-color: #DDBA88;
+    background-color: var(--cor-principal-2);
     color: #fff;
     display: flex;
     flex-wrap: wrap;
@@ -469,6 +511,7 @@ main {
 }
 
 #contato div h4 {
+    font-family: var(--fonte-titulos);
     display: inline-block;
     font-size: 20px;
     font-weight: 700;
@@ -483,12 +526,13 @@ main {
 }
 
 #contato div p a {
+    font-weight: 500;
     color: #fff;
     transition: all 0.4s ease-in;
 }
 
 #contato div p a:hover {
-    color: #6e3112;
+    color: var(--cor-principal-1);
 }
 
 
@@ -499,11 +543,14 @@ main {
 }
 
 .footer h4 {
-    color: #6e3112;
+    font-family: var(--fonte-titulos);
+    color: var(--cor-principal-1);
     font-size: 35px;
 }
 
 .agradecimentos {
+    color: var(--cor-textos-1);
+    font-weight: 300;
     font-size: 17px;
 }
 
@@ -513,18 +560,21 @@ main {
 
 
 .dev {
-    font-weight: normal;
+    color: var(--cor-textos-1);
+    font-weight: 300;
     margin: 20px 0 0 15px;
     font-size: 13px;
 }
 
 .dev-copy {
-    font-weight: normal;
+    color: var(--cor-textos-1);
+    font-weight: 300;
     font-size: 13px;
 }
 
 .dev-copy a {
-    color: #6e3112;
+    font-weight: 500;
+    color: var(--cor-principal-1);
     text-decoration: none;
 }
 
@@ -533,7 +583,7 @@ main {
 }
 
 
-/* ESTILOS DO CONTEÚDO PRÍNCIPAL */
+/* ESTILO DA MISSAO VISAO VALORES */
 #principal-mvv {
     max-width: 1000px;
     margin: auto;
@@ -558,24 +608,33 @@ main {
     margin: 50px 0;
     padding: 25px 40px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.226);
+    box-shadow: 0 0 10px var(--cor-sombras-1);
+}
+
+#mvv-section p {
+    color: var(--cor-textos-1);
+    font-weight: 300;
+    word-spacing: 5px;
+    line-height: 20px;
 }
 
 #mvv-section h1 {
-    color: #4b1d06;
+    font-family: var(--fonte-titulos);
+    color: var(--cor-principal-1);
     font-size: 35px;
 }
 
 #mvv-section h3 {
-    color: #6e3112;
+    font-family: var(--fonte-titulos);
+    color: var(--cor-principal-1);
     font-size: 27px;
     margin: 0  0 10px 0;
 }
 
-#mvv-section p {
-    color: rgb(75, 75, 75);
-    word-spacing: 5px;
-    line-height: 20px;
+#mvv-section div P {
+    color: var(--cor-textos-1);
+    font-size: 17px;
+    margin: 0  0 10px 0;
 }
 
 #mvv-section ul {
@@ -584,7 +643,8 @@ main {
 
 #mvv-section ul li {
     list-style: decimal;
-    color: rgb(75, 75, 75);
+    color: var(--cor-textos-1);
+    font-weight: 300;
     margin-bottom: 20px;
     word-spacing: 5px;
     line-height: 20px;
@@ -612,6 +672,24 @@ main {
 
 
 /* CSS MEDIA QUERIES */
+@media (max-width: 1092px) {
+    .section-cards-info {
+        justify-content: center;
+    }
+
+    .section-2 {
+        justify-content: center;
+    }
+
+    .card {
+        max-width: 280px;
+    }
+
+    .card img {
+        height: 300px;
+    }
+}
+
 @media (max-width: 720px) {
     body {
         overflow-x: hidden;
@@ -644,24 +722,6 @@ main {
     }
 }
 
-@media (max-width: 1092px) {
-    .section-cards-info {
-        justify-content: center;
-    }
-
-    .section-2 {
-        justify-content: center;
-    }
-
-    .card {
-        max-width: 280px;
-    }
-
-    .card img {
-        height: 300px;
-    }
-}
-
 @media (max-width: 610px) {
     .mySlides img {
         height: 65vh;
@@ -683,5 +743,12 @@ main {
 
     #contato div {
         margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 370px) {
+    .card-promotion {
+        width: 100px;
+        height: 100px;
     }
 }
