@@ -29,6 +29,14 @@
 
     --fonte-titulos: 'Nikumaru', sans-serif;
     --fonte-paragrafos: 'Kanit', sans-serif;
+
+    /* Variaveis dos botões de compra */
+    --width: 100px;
+    --height: 35px;
+    --tooltip-height: 35px;
+    --tooltip-width: 90px;
+    --gap-between-tooltip-to-button: 18px;
+    --tooltip-color: #fff;
   }
 
 * {
@@ -336,12 +344,16 @@ main {
     border-radius: 10px 10px 0 0;
 }
 
+.card-description {
+    margin: 0 20px;
+}
+
 .card-description h3 {
     font-family: var(--fonte-titulos);
     color: var(--cor-principal-1);
     font-weight: 600;
     font-size: 19px;
-    margin: 15px 14px 20px 20px;
+    margin: 15px 14px 0px 0px;
     display: inline-block;
 }
 
@@ -353,11 +365,11 @@ main {
 }
 
 .card-produto-espec {
-    height: 112px;
+    min-height: 112px;
     color: var(--cor-textos-1);
     font-weight: 300;
     font-size: 15px;
-    margin: 0 20px 20px 20px;
+    margin: 18px 20px 20px 20px;
     text-align: justify;
 }
 
@@ -385,17 +397,10 @@ main {
 
 
 .button {
-    --width: 100px;
-    --height: 35px;
-    --tooltip-height: 35px;
-    --tooltip-width: 90px;
-    --gap-between-tooltip-to-button: 18px;
-    --tooltip-color: #fff;
     width: var(--width);
     height: var(--height);
     background: var(--cor-principal-2);
     position: relative;
-    text-align: center;
     font-weight: 600;
     border-radius: 0.45em;
     transition: background-color 0.4s;
@@ -404,16 +409,17 @@ main {
   .button::before {
     position: absolute;
     content: attr(data-tooltip);
-    width: var(--tooltip-width);
+    width: 145px;
     height: var(--tooltip-height);
     background-color: var(--cor-principal-1);
     font-size: 0.9rem;
     font-weight: 600;
+    text-align: center;
     color: var(--cor-principal-2);
     border-radius: .25em;
     line-height: var(--tooltip-height);
     bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
-    left: calc(50% - var(--tooltip-width) / 2);
+    left: calc(50% - 145px / 2);
   }
   
   .button::after {
@@ -449,7 +455,7 @@ main {
   }
   
   .text {
-    top: 0
+    top: 0;
   }
   
   .text,.icon {
