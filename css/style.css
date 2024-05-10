@@ -353,6 +353,7 @@ main {
 }
 
 .card-produto-espec {
+    height: 112px;
     color: var(--cor-textos-1);
     font-weight: 300;
     font-size: 15px;
